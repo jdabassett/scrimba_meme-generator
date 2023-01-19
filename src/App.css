@@ -1,0 +1,71 @@
+:root, ::before, ::after {
+  --dark-purple:#672280;
+  --light-purple:#A527D2;
+  --white:#FaFaFa;
+  --black:#0a0a0a;
+  font-size:16px;
+  font-family: 'Inter', 'Courier New';
+  color:var(--black);
+}
+
+/* whole page */
+body {
+  background-color:var(--white);
+  padding:0;
+  margin:0;
+}
+
+#root {
+  padding:0;
+  margin:0;
+}
+
+
+/* navbar */
+.navbar-container {
+  background-image:linear-gradient(90deg, var(--dark-purple),var(--light-purple));
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--white);
+  padding:0px 30px 0 30px;
+  height:12vh;
+}
+
+.navbar-title-container {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  gap:10px;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+.navbar-troll-face {
+  width:80px;
+}
+
+.navbar-title {
+  font-size:2em;
+}
+
+.navbar-sub-title {
+  font-size:1em;
+}
+
+/* main content */
+
+
+
+/* 
+
+
+.navbar-container
+.navbar-title-container
+.navbar-troll-face
+.navbar-title
+.navbar-sub-title 
+      
+      */
