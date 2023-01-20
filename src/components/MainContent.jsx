@@ -6,8 +6,10 @@ export default function MainContent() {
   return (
     <div className="mainContent-container">
       <form className="main-form-container">
-        <input className="main-input-above"></input>
-        <input className="main-input-below"></input>
+        <div className="main-input-container">
+          <input className="main-input-above"></input>
+          <input className="main-input-below"></input>
+        </div>
         <button className="main-button">
           Get a new meme image
           <FontAwesomeIcon icon={faImage}></FontAwesomeIcon>
