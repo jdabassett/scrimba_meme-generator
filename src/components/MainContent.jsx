@@ -4,15 +4,37 @@ import { faImage } from "@fortawesome/free-regular-svg-icons";
 // import meme from "../images/sutmm.webp";
 import memesData from "../memesData.js";
 
-
 export default function MainContent() {
-  let currentMeme;
-  let currentMemeUrl = "https://i.imgflip.com/3si4.jpg";
+  const [meme, setMeme] = React.useState({
+    topText: "shut up",
+    bottomText: "and take my money!",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+    width: 568,
+    height: 335,
+  });
 
-  function handlerMemeImage() {
-    let index = Math.floor(Math.random() * memesData.data.memes.length);
-    currentMeme = memesData.data.memes[index];
-    currentMemeUrl = currentMeme.url;
+  let styles = {
+    width: meme.width,
+    height: meme.height,
+  };
+
+  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+
+  function handlerMemeImage(event) {
+    event.preventDefault();
+    const memesArray = allMemeImages.data.memes;
+    let index = Math.floor(Math.random() * memesArray.length);
+    const memeCurrent = memesArray[index];
+    const url = memeCurrent.url;
+    const width = memeCurrent.width;
+    const height = memeCurrent.height;
+
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      randomImage: url,
+      width: width,
+      height: height,
+    }));
   }
 
   return (
@@ -39,7 +61,15 @@ export default function MainContent() {
         </button>
       </form>
       {/* <div className="main-meme-container"></div> */}
-      <img className="main-meme" src={currentMemeUrl} alt="meme hasn't loaded yet" />
+      <div style={styles} className="main-meme-container">
+        <img
+          className="main-meme"
+          src={meme.randomImage}
+          alt="Meme hasn't loaded, click the button above."
+        />
+        <h2 className="main-meme-text top">{meme.topText}</h2>
+        <h2 className="main-meme-text bottom">{meme.bottomText}</h2>
+      </div>
     </div>
   );
 }

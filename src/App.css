@@ -1,7 +1,7 @@
 :root, ::before, ::after {
   --dark-purple:#672280;
   --light-purple:#A527D2;
-  --white:#FaFaFa;
+  --white:#EEE;
   --black:#0a0a0a;
   font-size:16px;
   font-family: 'Inter', 'Courier New';
@@ -88,8 +88,8 @@ body {
   flex-wrap:nowrap;
   justify-content:space-between;
   width:80vw;
-  height:18vh;
-  margin:10vh 0 10vh 0;
+  min-height:6em;
+  margin:5vh 0 5vh 0;
 }
 
 .main-input-container {
@@ -133,13 +133,50 @@ body {
 }
 
 .main-meme-container {
-  outline:2px solid blue;
-  width:80vw;
-  height:36vh;
+  /* outline:2px solid blue; */
+  max-width:80vw;
+  position:relative;
+  max-height:60vh;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:10px;
 }
 .main-meme {
-  max-width:80vw;
-  max-height:70%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  border-radius:10px;
+
+}
+
+.main-meme-text {
+  position:absolute;
+  font-size:1.8em;
+  font-family: impact, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+  2px 2px 0 #000,
+  -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+  0 2px 0 #000,
+  2px 0 0 #000,
+  0 -2px 0 #000,
+  -2px 0 0 #000,
+  2px 2px 5px #000; 
+  text-align:center;
+}
+
+.top{
+  top:0em;
+}
+
+.bottom{
+  bottom:0em;
 }
 
 
