@@ -5,21 +5,39 @@ import { faImage } from "@fortawesome/free-regular-svg-icons";
 import memesData from "../memesData.js";
 
 export default function MainContent() {
+  //meme object
   const [meme, setMeme] = React.useState({
-    topText: "shut up",
-    bottomText: "and take my money!",
-    randomImage: "http://i.imgflip.com/1bij.jpg",
-    width: 568,
-    height: 335,
+    topText: "top text",
+    bottomText: "bottom text",
+    randomImage: "https://i.imgflip.com/3si4.jpg",
+    width: 500,
+    height: 281,
+    fontSize: 20,
   });
 
-  let styles = {
+  //meme styling dimensions
+  let stylesDimensions = {
     width: meme.width,
     height: meme.height,
   };
 
+  let stylesFontSize = {
+    fontSize: `${meme.fontSize}px`,
+  };
+
+  //array of memes
   const [allMemeImages, setAllMemeImages] = React.useState(memesData);
 
+  //function to update text as it is typed
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  }
+
+  //function to change meme image
   function handlerMemeImage(event) {
     event.preventDefault();
     const memesArray = allMemeImages.data.memes;
@@ -37,6 +55,7 @@ export default function MainContent() {
     }));
   }
 
+  //elements to render
   return (
     <div className="mainContent-container">
       <form className="main-form-container">
@@ -44,16 +63,42 @@ export default function MainContent() {
           <input
             className="main-input main-text"
             type="text"
-            placeholder="Shut up"
+            placeholder="top text"
+            name="topText"
+            value={meme.topText}
+            onChange={handleChange}
           ></input>
           <input
             className="main-input main-text"
             type="text"
-            placeholder="and take my money"
+            placeholder="bottom text"
+            name="bottomText"
+            value={meme.bottomText}
+            onChange={handleChange}
           ></input>
         </div>
+        <div className="main-input-slider-container">
+          <label
+            htmlFor="input-text-size"
+            className="main-text main-input-slider-title"
+          >
+            text size
+          </label>
+          <input
+            className="main-input-slider"
+            type="range"
+            min={10}
+            max={50}
+            step={2.5}
+            name="fontSize"
+            value={meme.fontSize}
+            id="input-text-size"
+            onChange={handleChange}
+          ></input>
+        </div>
+
         <button className="main-button main-text" onClick={handlerMemeImage}>
-          Get a new meme image
+          get a new meme image
           <FontAwesomeIcon
             className="button-icon"
             icon={faImage}
@@ -61,14 +106,18 @@ export default function MainContent() {
         </button>
       </form>
       {/* <div className="main-meme-container"></div> */}
-      <div style={styles} className="main-meme-container">
+      <div style={stylesDimensions} className="main-meme-container">
         <img
           className="main-meme"
           src={meme.randomImage}
           alt="Meme hasn't loaded, click the button above."
         />
-        <h2 className="main-meme-text top">{meme.topText}</h2>
-        <h2 className="main-meme-text bottom">{meme.bottomText}</h2>
+        <h2 style={stylesFontSize} className="main-meme-text top">
+          {meme.topText}
+        </h2>
+        <h2 style={stylesFontSize} className="main-meme-text bottom">
+          {meme.bottomText}
+        </h2>
       </div>
     </div>
   );

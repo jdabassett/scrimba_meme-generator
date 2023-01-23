@@ -7,9 +7,9 @@ export default function Navbar() {
     <div className='navbar-container'>
       <div className='navbar-title-container'>
         <img className='navbar-troll-face' src={trollFace} alt="troll face meme" />
-        <h1 className='navbar-title'>MemeGenerator</h1>
+        <h1 className='navbar-title'>meme generator</h1>
       </div>
-      <h2 className='navbar-sub-title'>React Course - Project 3</h2>
+      <h2 className='navbar-sub-title'>react course - project 3</h2>
     </div>
   )
 }
