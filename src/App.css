@@ -1,38 +1,350 @@
-.App {
-  text-align: center;
+:root, ::before, ::after {
+  --dark-purple:#672280;
+  --light-purple:#A527D2;
+  --white:#EEE;
+  --black:#0a0a0a;
+  font-size:16px;
+  font-family: 'Inter', 'Courier New';
+  color:var(--black);
+  box-sizing:border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* whole page */
+body {
+  background-color:var(--white);
+  padding:0;
+  margin:0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  padding:0;
+  margin:0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-container {
+  width:100%;
+}
+
+
+/* navbar */
+.navbar-container {
+  background-image:linear-gradient(90deg, var(--dark-purple),var(--light-purple));
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--white);
+  padding:0px;
+  height:16vh;
+  width:100%;
+
+}
+
+.navbar-title-container {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  gap:10px;
+  justify-content:flex-start;
+  align-items:center;
+  margin-left:20px;
+}
+
+.navbar-title {
+  font-size:2.7em;
+} 
+
+.navbar-sub-title {
+  margin-right:20px;
+  font-size:1.4em;
+}
+
+/* main content 
+.mainContent-container
+.main-form-container
+.main-input-above
+.main-input-below
+.main-button
+.main-text
+.button-icon
+.main-meme-container
+.main-meme
+*/
+.mainContent-container {
+  /* outline:2px solid red; */
+  width:100%;
+  height:88vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.main-form-container {
+  /* outline:2px solid green; */
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  width:80vw;
+  min-height:6em;
+  margin:5vh 0 5vh 0;
+}
+
+.main-input-container {
+  /* outline:2px solid maroon; */
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  height:40%;
+}
+
+.main-input{
+  /* outline:2px solid yellow; */
+  width:45%;
+  height:95%;
+  border-radius:15px;
+  outline:3px solid var(--black);
+  text-align:left;
+  text-indent:0.5em;
+  font-family: 'Inter', 'Courier New';
+  font-weight:bold;
+}
+
+
+
+.main-button {
+  /* outline:2px solid brown; */
+  background-image:linear-gradient(90deg,var(--dark-purple),var(--light-purple));
+  color:var(--white);
+  font-family: 'Inter', 'Courier New';
+  font-weight:bold;
+  height:40%;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+.main-text {
+  border:none;
+  font-size:1.4em;
+}
+
+.button-icon {
+  margin-left:0.5em;
+}
+
+.main-input-slider-container {
+  margin: 0.5em 0 0.5em 0;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:start;
+  align-items:center;
+  /* outline:2px solid red; */
+  width:80vw;
+}
+
+.main-input-slider-title {
+  text-indent:0.5em;
+  width:15%;
+  font-family: 'Inter', 'Courier New';
+  font-weight:bold;
+}
+.main-input-slider {
+  width:85%;
+  accent-color:var(--dark-purple);
+  cursor:pointer;
+}
+
+/* input[type="range"] {
+  outline:2px solid red;
+} */
+
+/* main-input-slider-container
+input-text-size
+main-input-slider-title
+main-input-slider */
+
+.main-meme-container {
+  /* outline:2px solid blue; */
+  max-width:80vw;
+  position:relative;
+  max-height:60vh;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:10px;
+}
+.main-meme {
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  border-radius:10px;
+
+}
+
+.main-meme-text {
+  position:absolute;
+  font-family: impact, sans-serif;
+  text-transform: uppercase;
   color: white;
+  letter-spacing: 1px;
+  text-shadow:
+  2px 2px 0 #000,
+  -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+  0 2px 0 #000,
+  2px 0 0 #000,
+  0 -2px 0 #000,
+  -2px 0 0 #000,
+  2px 2px 5px #000; 
+  text-align:center;
 }
 
-.App-link {
-  color: #61dafb;
+.top{
+  top:0em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bottom{
+  bottom:0em;
+}
+
+
+@media (max-width:1200px){
+  .main-input-slider-title {
+    width:17%;
   }
-  to {
-    transform: rotate(360deg);
+  .main-input-slider {
+    width: 83%;
+    /* outline:2px solid black; */
+  }
+  .navbar-troll-face {
+    /* outline:2px solid black; */
+    width:120px;
+  }
+  .navbar-title {
+    font-size:2.7em;
+  }
+  .navbar-sub-title {
+    font-size:1.4em;
+  }
+  .main-text {
+    font-size:1.4em;
   }
 }
+
+@media (max-width:1000px){
+  .main-input-slider-title {
+    width:20%;
+  }
+  .main-input-slider {
+    width:80%;
+    /* outline:2px solid blue; */
+  }
+  .navbar-troll-face {
+    /* outline:2px solid black; */
+    width:100px;
+  }
+  .navbar-title {
+    font-size:2.5em;
+  }
+  .navbar-sub-title {
+    font-size:1.3em;
+  }
+  .main-text {
+    font-size:1.3em;
+  }
+}
+
+@media (max-width:800px){
+  .main-input-slider-title {
+    width:28%;
+  }
+  .main-input-slider {
+    width:72%;
+    /* outline:2px solid red; */
+  }
+  .navbar-troll-face {
+    /* outline:2px solid red; */
+    width:80px;
+  }
+  .navbar-title {
+    font-size:1.8em;
+  }
+  .navbar-sub-title {
+    font-size:1em;
+  }
+  .main-text {
+    font-size:1.3em;
+  }
+}
+
+@media (max-width:600px){
+  .main-input-slider-title {
+    width:30%;
+  }
+  .main-input-slider {
+    width:70%;
+    /* outline:2px solid green; */
+  }
+  .navbar-troll-face {
+    /* outline:2px solid green; */
+    width:60px;
+  }
+  .navbar-title {
+    font-size:1.3em;
+  }
+  .navbar-sub-title {
+    font-size:0.5em;
+  }
+  .main-text {
+    font-size:1.0em;
+  }
+}
+
+
+@media (max-width:400px){
+  .main-input-slider-title {
+    width:35%;
+  }
+  .main-input-slider {
+    width:65%;
+    /* outline:2px solid orange; */
+  }
+  .navbar-troll-face {
+    /* outline:2px solid orange; */
+    width:40px;
+  }
+  .navbar-title {
+    font-size:0.7em;
+  }
+  .navbar-sub-title {
+    font-size:0.3em;
+  }
+  .main-text{
+    font-size:0.8em;
+  }
+}
+
+
+
+
+
+/* 
+.navbar-container
+.navbar-title-container
+.navbar-troll-face
+.navbar-title
+.navbar-sub-title 
+*/
+/*
+.mainContent-container
+.main-form-container
+.main-input-above
+.main-input-below
+.main-button
+.main-meme
+ */
