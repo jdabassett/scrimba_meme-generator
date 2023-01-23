@@ -1,8 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-regular-svg-icons";
-// import meme from "../images/sutmm.webp";
-import memesData from "../memesData.js";
+// import memesData from "../memesData.js";
 
 export default function MainContent() {
   //meme object
@@ -26,7 +25,7 @@ export default function MainContent() {
   };
 
   //array of memes
-  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+  const [allMemeImages, setAllMemeImages] = React.useState({});
 
   //function to update text as it is typed
   function handleChange(event) {
@@ -54,6 +53,13 @@ export default function MainContent() {
       height: height,
     }));
   }
+
+  //import meme data from api
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemeImages(data));
+  }, []);
 
   //elements to render
   return (

@@ -98,7 +98,6 @@ body {
   flex-wrap:nowrap;
   justify-content:space-between;
   height:40%;
-  font-family: 'Inter', 'Courier New';
 }
 
 .main-input{
@@ -109,6 +108,8 @@ body {
   outline:3px solid var(--black);
   text-align:left;
   text-indent:0.5em;
+  font-family: 'Inter', 'Courier New';
+  font-weight:bold;
 }
 
 
@@ -117,6 +118,8 @@ body {
   /* outline:2px solid brown; */
   background-image:linear-gradient(90deg,var(--dark-purple),var(--light-purple));
   color:var(--white);
+  font-family: 'Inter', 'Courier New';
+  font-weight:bold;
   height:40%;
   border-radius:15px;
   cursor:pointer;
@@ -145,6 +148,8 @@ body {
 .main-input-slider-title {
   text-indent:0.5em;
   width:15%;
+  font-family: 'Inter', 'Courier New';
+  font-weight:bold;
 }
 .main-input-slider {
   width:85%;
